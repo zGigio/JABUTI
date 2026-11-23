@@ -1,0 +1,7 @@
+// Comentario de bloco que nunca e fechado: erro lexico unico,
+// sem mensagens em cascata.
+programa ErroComentario {
+    inteiro a = 1;
+    /* esqueci de fechar este comentario
+    escreval(a);
+}

@@ -1,0 +1,11 @@
+// Erros SEMANTICOS (2/2): condicoes, operadores e laco 'para'.
+programa ErrosSemanticos2 {
+    inteiro idade = 20;
+    texto   nome = "Ana";
+
+    se (idade) { escreval("x"); }
+    idade = nome + 1;
+    idade = 5.5 % 2;
+    para (nome de 1 ate 3) { }
+    escreval(nome, idade);
+}

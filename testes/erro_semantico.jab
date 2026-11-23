@@ -1,0 +1,15 @@
+// Erros SEMANTICOS (1/2): declaracoes, tipos e constantes.
+programa ErrosSemanticos {
+    inteiro idade = 20;
+    inteiro idade;
+    real    preco = 9.5;
+    texto   nome = "Ana";
+    constante inteiro MAX = 10;
+
+    altura = 1.8;
+    idade = "vinte";
+    idade = preco;
+    MAX = 11;
+    preco = idade / 0;
+    escreval(nome, idade, preco);
+}

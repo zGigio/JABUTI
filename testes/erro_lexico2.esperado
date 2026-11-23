@@ -1,0 +1,7 @@
+inteiro '99999999999' fora do intervalo permitido (maximo 2147483647)
+sequencia de escape invalida '\q'
+operador incompleto '&'
+nome invalido 'média'
+Erros lexicos    : 4
+Erros sintaticos : 0
+Erros semanticos : 0

@@ -1,0 +1,23 @@
+// Lista os numeros primos de 2 ate LIMITE.
+// Usa: constante, para aninhado com enquanto, resto (%), 'e' logico.
+programa Primos {
+    constante inteiro LIMITE = 40;
+    inteiro n, d, divisores;
+
+    escreval("Primos de 2 ate ", LIMITE, ":");
+
+    para (n de 2 ate LIMITE) {
+        divisores = 0;
+        d = 2;
+        enquanto (d * d <= n e divisores == 0) {
+            se (n % d == 0) {
+                divisores = divisores + 1;
+            }
+            d = d + 1;
+        }
+        se (divisores == 0) {
+            escreva(n, " ");
+        }
+    }
+    escreval();
+}

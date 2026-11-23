@@ -1,0 +1,14 @@
+// Erros SINTATICOS: cada um e relatado uma vez e a analise continua.
+programa ErrosSintaticos {
+    inteiro a = 1
+    inteiro b = 2;
+    se (a > b {
+        escreval("a e maior");
+    }
+    enquanto (a < ) {
+        a = a + 1;
+    }
+    a = ;
+    escreval("fim")
+    b = a +* 2;
+}

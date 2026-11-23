@@ -1,0 +1,61 @@
+(* ============================================================
+   Gramatica da linguagem JABUTI em EBNF
+   Notacao:  [ x ] opcional   { x } zero ou mais   ( a | b ) escolha
+             "texto" terminal literal   MAIUSCULAS = token do Flex
+   ============================================================ *)
+
+programa        = "programa" [ IDENTIFICADOR ] "{" { comando } "}" ;
+
+comando         = declaracao
+                | atribuicao
+                | entrada
+                | saida
+                | condicional
+                | repeticao
+                | para
+                | bloco ;
+
+bloco           = "{" { comando } "}" ;
+
+declaracao      = tipo declarador { "," declarador } ";"
+                | "constante" tipo IDENTIFICADOR "=" expressao ";" ;
+declarador      = IDENTIFICADOR [ "=" expressao ] ;
+tipo            = "inteiro" | "real" | "texto" | "booleano" ;
+
+atribuicao      = IDENTIFICADOR "=" expressao ";" ;
+
+entrada         = "leia" "(" IDENTIFICADOR { "," IDENTIFICADOR } ")" ";" ;
+
+saida           = "escreva"  "(" expressao { "," expressao } ")" ";"
+                | "escreval" "(" [ expressao { "," expressao } ] ")" ";" ;
+
+condicional     = "se" "(" expressao ")" bloco
+                  [ "senao" ( bloco | condicional ) ] ;
+
+repeticao       = "enquanto" "(" expressao ")" bloco ;
+
+para            = "para" "(" IDENTIFICADOR "de" expressao "ate" expressao
+                  [ "passo" [ "-" ] LIT_INTEIRO ] ")" bloco ;
+
+(* ---- expressoes: um nivel por precedencia (do menor para o maior) ---- *)
+expressao       = conjuncao     { ( "ou" | "||" ) conjuncao } ;
+conjuncao       = igualdade     { ( "e"  | "&&" ) igualdade } ;
+igualdade       = relacional    { ( "==" | "!=" ) relacional } ;
+relacional      = soma          { ( "<" | ">" | "<=" | ">=" ) soma } ;
+soma            = termo         { ( "+" | "-" ) termo } ;
+termo           = unario        { ( "*" | "/" | "%" ) unario } ;
+unario          = ( "-" | "nao" | "!" ) unario | primario ;
+primario        = LIT_INTEIRO | LIT_REAL | LIT_CADEIA
+                | "verdadeiro" | "falso"
+                | IDENTIFICADOR
+                | "(" expressao ")" ;
+
+(* ---- tokens (expressoes regulares do Flex) ---- *)
+IDENTIFICADOR   = letra { letra | digito } ;
+LIT_INTEIRO     = digito { digito } ;
+LIT_REAL        = digito { digito } "." digito { digito } ;
+LIT_CADEIA      = '"' { qualquer-caractere-exceto-aspas-e-quebra | escape } '"' ;
+escape          = "\" ( "n" | "t" | "r" | "\" | '"' ) ;
+letra           = "a".."z" | "A".."Z" | "_" ;
+digito          = "0".."9" ;
+(* comentarios: "//" ate o fim da linha  |  "/*" ... "*/" ;  espacos ignorados *)

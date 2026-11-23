@@ -1,0 +1,10 @@
+// Programa CORRETO que gera apenas AVISOS (a compilacao termina com sucesso).
+programa Avisos {
+    inteiro usada = 1;
+    inteiro nunca_usada;
+    inteiro so_escrita;
+    constante real PI = 3.14;
+
+    so_escrita = 5;
+    escreval(usada);
+}

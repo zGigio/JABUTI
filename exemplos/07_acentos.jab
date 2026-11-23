@@ -1,0 +1,7 @@
+// Acentos so podem aparecer em textos e comentarios.
+// No Windows, rode "chcp 65001" antes para o terminal exibir UTF-8.
+programa Acentuacao {
+    texto saudacao = "Olá, mundo! Programação em JABUTI é fácil.";
+    escreval(saudacao);
+    escreval("Ações: soma, subtração, média.");
+}

@@ -1,0 +1,8 @@
+// Primeiro programa em JABUTI: variaveis, texto e saida na tela
+programa OlaMundo {
+    texto nome = "Mundo";
+    inteiro ano = 2026;
+
+    escreval("Ola, ", nome, "!");
+    escreval("Estamos em ", ano, ".");
+}

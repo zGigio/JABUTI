@@ -1,0 +1,17 @@
+// Fatorial de um numero lido do teclado.
+// Usa: para, se / senao, operadores logicos (ou).
+programa Fatorial {
+    inteiro n, i, fat = 1;
+
+    escreval("Digite um numero inteiro entre 0 e 12:");
+    leia(n);
+
+    se (n < 0 ou n > 12) {
+        escreval("Valor fora do intervalo permitido.");
+    } senao {
+        para (i de 2 ate n) {
+            fat = fat * i;
+        }
+        escreval(n, "! = ", fat);
+    }
+}

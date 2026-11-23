@@ -1,0 +1,58 @@
+/* Programa que usa TODOS os recursos da linguagem JABUTI:
+ * os quatro tipos, constantes, leitura, operadores aritmeticos,
+ * relacionais e logicos, concatenacao de textos, blocos com escopo
+ * proprio, se / senao se / senao, enquanto e para.
+ */
+programa Completo {
+    constante texto SAUDACAO = "Ola, ";
+    constante real LIMITE_IMC = 25.0;
+
+    texto nome;
+    inteiro idade, anos_para_100;
+    real peso, altura, imc;
+    booleano maior_de_idade, tem_nome, acima_do_peso;
+
+    escreval("Qual o seu nome?");
+    leia(nome);
+    escreval("Qual a sua idade?");
+    leia(idade);
+    escreval("Qual o seu peso (kg)?");
+    leia(peso);
+    escreval("Qual a sua altura (m)?");
+    leia(altura);
+
+    tem_nome       = nome != "";
+    maior_de_idade = idade >= 18;
+    imc            = peso / (altura * altura);
+    acima_do_peso  = imc > LIMITE_IMC;
+
+    escreval(SAUDACAO + nome + "!");
+
+    se (tem_nome e maior_de_idade) {
+        escreval("Voce e maior de idade.");
+    } senao se (nao maior_de_idade) {
+        escreval("Voce e menor de idade.");
+    }
+
+    escreval("Seu IMC e ", imc);
+    se (acima_do_peso ou imc < 18.5) {
+        escreval("Atencao: IMC fora da faixa ideal.");
+    } senao {
+        escreval("IMC dentro da faixa ideal.");
+    }
+
+    /* bloco com escopo proprio: esta 'idade' sombreia a de fora */
+    {
+        inteiro idade = 100;
+        escreval("Idade dentro do bloco: ", idade);
+    }
+    escreval("Idade fora do bloco: ", idade);
+
+    anos_para_100 = 0;
+    enquanto (idade + anos_para_100 < 100) {
+        anos_para_100 = anos_para_100 + 1;
+    }
+    escreval("Faltam ", anos_para_100, " anos para voce fazer 100.");
+    escreval("Divisao inteira 17 / 5 = ", 17 / 5, " e resto ", 17 % 5);
+    escreval("Divisao real   17 / 5.0 = ", 17 / 5.0);
+}

@@ -1,0 +1,5 @@
+a condicao do 'se' deve ser booleana
+o operador '+' exige operandos numericos
+o operador '%' exige operandos inteiros
+a variavel de controle do 'para' deve ser inteira
+Erros semanticos : 4

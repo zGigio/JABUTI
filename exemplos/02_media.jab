@@ -1,0 +1,27 @@
+// Calcula a media de duas notas e informa a situacao do aluno.
+// Usa: leia, constante, real, se / senao se / senao.
+programa MediaDoAluno {
+    texto nome;
+    real nota1, nota2, media;
+    constante real NOTA_MINIMA = 6.0;
+
+    escreval("Nome do aluno:");
+    leia(nome);
+    escreval("Primeira nota:");
+    leia(nota1);
+    escreval("Segunda nota:");
+    leia(nota2);
+
+    media = (nota1 + nota2) / 2;
+
+    escreval("Aluno: ", nome);
+    escreval("Media: ", media);
+
+    se (media >= NOTA_MINIMA) {
+        escreval("Situacao: APROVADO");
+    } senao se (media >= 4.0) {
+        escreval("Situacao: RECUPERACAO");
+    } senao {
+        escreval("Situacao: REPROVADO");
+    }
+}

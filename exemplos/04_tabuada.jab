@@ -1,0 +1,20 @@
+// Tabuada e contagem regressiva.
+// Usa: para com e sem 'passo' (inclusive negativo), escreva / escreval.
+programa Tabuada {
+    inteiro n, i;
+
+    escreval("Tabuada de qual numero?");
+    leia(n);
+
+    para (i de 1 ate 10) {
+        escreval(n, " x ", i, " = ", n * i);
+    }
+
+    escreval();
+    escreval("Contagem regressiva de 2 em 2:");
+    para (i de 10 ate 0 passo -2) {
+        escreva(i, " ");
+    }
+    escreval();
+    escreval("Decolar!");
+}

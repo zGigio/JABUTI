@@ -1,0 +1,8 @@
+// Compila sem erros; o erro de divisao por zero acontece na EXECUCAO,
+// porque o divisor so e conhecido quando o usuario digita o valor.
+programa DivisaoPorZero {
+    inteiro a = 10, b;
+    escreval("Digite o divisor:");
+    leia(b);
+    escreval(a, " / ", b, " = ", a / b);
+}

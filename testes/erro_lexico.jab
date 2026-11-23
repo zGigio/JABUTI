@@ -1,0 +1,10 @@
+// Erros LEXICOS: o scanner relata todos e a analise continua.
+programa ErrosLexicos {
+    inteiro a = 10;
+    inteiro b = a @ 3;
+    texto   t = "sem fechar;
+    real    r = 3.;
+    inteiro 2x = 5;
+    b = a # 2;
+    escreval(a, b);
+}

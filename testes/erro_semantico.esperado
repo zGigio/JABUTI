@@ -1,0 +1,7 @@
+variavel 'altura' nao foi declarada
+'idade' ja foi declarado neste bloco
+tipo incompativel na atribuicao a 'idade': esperado inteiro, recebido texto
+tipo incompativel na atribuicao a 'idade': esperado inteiro, recebido real
+nao e possivel alterar a constante 'MAX'
+divisao por zero: o divisor e a constante 0
+Erros semanticos : 6

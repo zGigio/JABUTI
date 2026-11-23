@@ -1,0 +1,9 @@
+// Mais erros LEXICOS: inteiro grande demais, escape invalido,
+// operador incompleto e acento fora de texto/comentario.
+programa ErrosLexicos2 {
+    inteiro grande = 99999999999;
+    texto   t = "tab\q aqui";
+    booleano ok = verdadeiro & falso;
+    inteiro média = 1;
+    escreval(grande, t, ok);
+}
